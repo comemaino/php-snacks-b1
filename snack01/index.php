@@ -43,15 +43,17 @@ error_reporting(E_ALL);
   var_dump($matches);  
   ?>
 
-  <ul>
-    <?php
-    for ($i = 0; $i < count($matches); $i++) {
-      $current_match = $matches[$i]
-      ?>
-      <li> 
-        <h3> <?php echo $current_match["teamA"]?></h3>
-      </li>
-   <?php } ?>
-  </ul>
+  <?php
+  for ($i = 0; $i < count($matches); $i++) {
+    $current_match = $matches[$i]
+    ?>
+    
+
+      <h3> <?php echo $current_match["teamA"]. " - " .$current_match["teamB"].
+      " | ".$current_match["teamA_score"]. "-" .$current_match["teamB_score"] ?></h3>
+
+    
+  <?php } ?>
+
 </body>
 </html>
