@@ -1,8 +1,8 @@
 <!-- ## Snack 2Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
 
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 ?>
 
@@ -15,7 +15,7 @@ error_reporting(E_ALL);
   <title>Snack02</title>
 </head>
 <body>
-  <?php 
+  <?php
   // GET
   $name = $_GET["name"];
   $email = $_GET["email"];
@@ -34,13 +34,10 @@ error_reporting(E_ALL);
   //AGE
   $is_age_int = is_numeric($age);
   var_dump($is_age_int);
-  var_dump($age)
-
+  var_dump($age);
   ?>
 
-  <?php 
-  if ($name_length_bool === false || $is_email_valid === false || $is_age_int === false)
-  { ?>
+  <?php if (!$name_length_bool || !$is_email_valid || !$is_age_int) { ?>
   <h2>Accesso negato</h2>
 <?php } else { ?> 
   <h2>Accesso riuscito</h2>
